@@ -1,0 +1,16 @@
+.input-box:focus {
+	background-color: #292b2c;
+	caret-color: #ffffff;
+	color: #ffffff;
+}
+.input-box:focus::placeholder {
+	opacity: 0;
+}
+
+.link {
+	text-decoration: none;
+	color: rgb(0, 225, 255);
+}
+.link:hover {
+	color: rgb(255, 0, 234);
+}
