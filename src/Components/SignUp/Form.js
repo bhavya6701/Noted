@@ -1,61 +1,75 @@
 import React from "react";
-import "./Form.css";
+import "../Form.css";
+import { Link } from "react-router-dom";
 
 const Form = () => {
 	return (
 		<div className="mx-4 my-2">
 			<form method="post">
-				<div className="mb-3">
-					<label for="username" className="form-label">
-						Username
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="username" className="input-group-text">
+						<i className="bi bi-person"></i>
 					</label>
 					<input
-						type="text"
-						maxLength={30}
-						className="form-control input-box"
 						id="username"
-						placeholder="cooldude_007"
+						type="text"
+						className="form-control input-box"
+						maxLength="30"
+						placeholder="Username (Eg. cooldude_007)"
+						autoComplete="off"
 						required
 					/>
 				</div>
-				<div className="mb-3">
-					<label for="useremail" className="form-label">
-						Email address
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="useremail" className="input-group-text">
+						<i className="bi bi-envelope"></i>
 					</label>
 					<input
+						id="useremail"
 						type="email"
 						className="form-control input-box"
-						id="useremail"
-						placeholder="name@example.com"
+						maxLength="40"
+						placeholder="Email Address"
+						autoComplete="off"
+						required
 					/>
 				</div>
-				<div className="mb-3">
-					<label for="userpass" className="form-label">
-						Password
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="userpass" className="input-group-text">
+						<i className="bi bi-key"></i>
 					</label>
 					<input
-						type="password"
-						maxLength={15}
-						minLength={8}
-						className="form-control input-box"
 						id="userpass"
+						type="password"
+						className="form-control input-box"
+						maxLength="16"
+						minLength="8"
 						placeholder="••••••••"
+						autoComplete="off"
+						required
 					/>
 				</div>
-				<div className="mb-3">
-					<label for="userbirth" className="form-label">
-						Birth Date
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="userbirth" className="input-group-text">
+						<i className="bi bi-balloon-heart"></i>
 					</label>
-					<input type="date" className="form-control" id="userbirth" />
+					<input
+						id="userbirth"
+						type="date"
+						className="form-control input-box"
+						placeholder="Birth Date (yyyy-mm-dd)"
+						autoComplete="off"
+						required
+					/>
 				</div>
-				<div className="fw-light">
+				<div className="fw-light mt-3">
 					Already have an account?&nbsp;
-					<a href="" className="link">
+					<Link to="/login" className="link">
 						Login Here <i className="bi bi-arrow-bar-right"></i>
-					</a>
+					</Link>
 				</div>
 				<div className="my-4 text-center">
-					<button type="submit" className="btn btn-outline-dark" id="usersubmit" rows="3">
+					<button type="submit" className="btn btn-lg btn-outline-dark" id="usersubmit" rows="3">
 						Sign Up!
 					</button>
 				</div>

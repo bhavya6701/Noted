@@ -1,42 +1,48 @@
 import React from "react";
-import "./Form.css";
+import "../Form.css";
+import { Link } from "react-router-dom";
 
 const Form = () => {
 	return (
 		<div className="mx-4 my-2">
 			<form method="post">
-				<div className="mb-3">
-					<label for="useremail" className="form-label">
-						Email address
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="useremail" className="input-group-text">
+						<i className="bi bi-envelope"></i>
 					</label>
 					<input
+						id="useremail"
 						type="email"
 						className="form-control input-box"
-						id="useremail"
-						placeholder="name@example.com"
+						maxLength="40"
+						placeholder="Email Address"
+						autoComplete="off"
+						required
 					/>
 				</div>
-				<div className="mb-3">
-					<label for="userpass" className="form-label">
-						Password
+				<div className="input-group col-lg mt-3 my-md-none">
+					<label htmlFor="userpass" className="input-group-text">
+						<i className="bi bi-key"></i>
 					</label>
 					<input
-						type="password"
-						maxLength={15}
-						minLength={8}
-						className="form-control input-box"
 						id="userpass"
+						type="password"
+						className="form-control input-box"
+						maxLength="16"
+						minLength="8"
 						placeholder="••••••••"
+						autoComplete="off"
+						required
 					/>
 				</div>
-				<div className="fw-light">
+				<div className="fw-light mt-3">
 					Don't have an account?&nbsp;
-					<a href="" className="link">
+					<Link to="/signup" className="link">
 						Sign Up! <i className="bi bi-arrow-bar-right"></i>
-					</a>
+					</Link>
 				</div>
 				<div className="my-4 text-center">
-					<button type="submit" className="btn btn-outline-dark" id="usersubmit" rows="3">
+					<button type="submit" className="btn btn-lg btn-outline-dark" id="usersubmit" rows="3">
 						Login!
 					</button>
 				</div>
