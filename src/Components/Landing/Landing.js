@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./Header";
+import LandingHeader from "./LandingHeader";
 import "./Landing.css";
 import { Link } from "react-router-dom";
 
@@ -12,9 +12,7 @@ const Landing = () => {
 
 	return (
 		<div>
-			<div className="row m-0">
-				<Header />
-			</div>
+			<LandingHeader />
 			<div id="landing-background-image"></div>
 			<div className="row m-0 p-0">
 				{/* left-body */}
@@ -44,7 +42,7 @@ const Landing = () => {
 							<p className="card-text fs-5">
 								Hey! I am a 21-year-old Java developer and AI enthusiast. Want to work with me?
 								Connect with me on LinkedIn&nbsp;
-								<a href="https://bhavyaruparelia.me/" id="linked-in">
+								<a href="https://www.linkedin.com/in/bhavya-ruparelia/" id="linked-in">
 									<i className="bi bi-linkedin"></i>
 								</a>
 								. Know more about me by following the given link!

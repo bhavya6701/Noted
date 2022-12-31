@@ -40,3 +40,35 @@
 .header:hover {
 	color: black;
 }
+
+#review-range {
+	-webkit-appearance: none;
+	background: transparent;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+	background: #2e2e2e;
+}
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	background-color: #ff7755;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+	background: #252525;
+}
+input[type="range"]::-moz-range-thumb {
+	border: none; /*Removes extra border that FF applies*/
+	background-color: #ff9955;
+}
+
+#comments {
+	height: 200px;
+}
+
+.comment-label {
+	color: #ff7755;
+}
