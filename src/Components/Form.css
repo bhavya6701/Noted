@@ -15,7 +15,6 @@
 .link:hover {
 	color: rgb(255, 60, 60);
 }
-
 .link::before {
 	content: "";
 	position: absolute;
@@ -28,9 +27,12 @@
 	transform: scaleX(0);
 	transition: transform 0.3s ease;
 }
-
 .link:hover::before {
 	transform: scaleX(1);
+}
+
+.link-color-white:hover {
+	color: white;
 }
 
 .header {
@@ -67,8 +69,4 @@ input[type="range"]::-moz-range-thumb {
 
 #comments {
 	height: 200px;
-}
-
-.comment-label {
-	color: #ff7755;
 }

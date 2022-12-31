@@ -6,6 +6,7 @@ import Landing from "./Components/Landing/Landing";
 import Suggestions from "./Components/ExtraPages/Suggestions";
 import ReleaseNotes from "./Components/ExtraPages/ReleaseNotes";
 import Credits from "./Components/ExtraPages/Credits";
+import HomePage from "./Components/Home/HomePage";
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route exact path="/suggestions" element={<Suggestions />} />
 					<Route exact path="/release-notes" element={<ReleaseNotes />} />
 					<Route exact path="/credits" element={<Credits />} />
+					<Route exact path="/home" element={<HomePage />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

@@ -1,6 +1,5 @@
 import React from "react";
 import "../Form.css";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Form = () => {
@@ -29,7 +28,7 @@ const Form = () => {
 							placeholder="Leave a comment here"
 							id="comments"
 						></textarea>
-						<label htmlFor="floatingTextarea2" className="comment-label lead fs-6">
+						<label htmlFor="floatingTextarea2" className="lead fs-6">
 							Comments:
 						</label>
 					</div>
