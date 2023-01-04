@@ -12,17 +12,18 @@ public class UserService {
     @Autowired
     UserJpaRepository repository;
 
-    public User getUserById(int id) {
-        return repository.findById(id);
+    public String checkUserLogin(String email, String password) {
+        return repository.findUser(email, password);
     }
 
     public String addUser(User user) {
-        return repository.insert(user);
+        return repository.addUser(user);
     }
 
     public List<User> getAllUsers() {
         return repository.findAll();
     }
+
 //    public void updateUser(User user, String id) {
 //        users = repository.findAll();
 //        for(int i=0; i< users.size(); i++) {

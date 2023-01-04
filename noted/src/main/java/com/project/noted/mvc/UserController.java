@@ -5,17 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 
 @RestController
 public class UserController {
     @Autowired
     private UserService userService;
 
-    //Get user by id
-    @RequestMapping("users/{id}")
-    public User getUser(@PathVariable int id) {
-        return userService.getUserById(id);
+    //Login user by id
+    @CrossOrigin
+    @RequestMapping(method = RequestMethod.POST, value = "/user/login")
+    public String getUser(@RequestBody Map<String, String> json) {
+        return userService.checkUserLogin(json.get("email"), json.get("password"));
     }
 
     //Add a new user
@@ -30,6 +31,7 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
 //Delete a user by id
 //    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
 //    public void deleteUser(@PathVariable int id) {

@@ -1,11 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Form.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Form = () => {
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const navigate = useNavigate();
+
+	const loginVerification = async (user) => {
+		const res = await fetch(`http://localhost:8080/user/login`, {
+			method: "POST",
+			headers: { "Content-type": "application/json" },
+			body: JSON.stringify(user),
+		});
+
+		const jsonMessage = await res.json();
+		const jsonObj = JSON.parse(JSON.stringify(jsonMessage));
+		const message = jsonObj["message"];
+		const isLoggedIn = message !== "";
+		if (isLoggedIn) {
+			Swal.fire({
+				title: "Login Success!",
+				text: "Hello " + message,
+				icon: "success",
+				confirmButtonText: "Write Notes!",
+			}).then((result) => {
+				if (result.isConfirmed) {
+					navigate("/home");
+				}
+			});
+		} else {
+			Swal.fire({
+				title: "Login Failure",
+				text: "Invalid email or password",
+				icon: "warning",
+				confirmButtonText: "Try Again",
+			});
+		}
+	};
+
+	const loginHandler = (e) => {
+		e.preventDefault();
+		loginVerification({ email, password });
+	};
+
 	return (
 		<div className="mx-4 my-2">
-			<form method="post">
+			<form method="post" onSubmit={loginHandler}>
 				<div className="input-group col-lg mt-3 my-md-none">
 					<label htmlFor="useremail" className="input-group-text">
 						<i className="bi bi-envelope"></i>
@@ -17,6 +59,7 @@ const Form = () => {
 						maxLength="40"
 						placeholder="Email Address"
 						autoComplete="off"
+						onChange={(e) => setEmail(e.target.value)}
 						required
 					/>
 				</div>
@@ -32,6 +75,7 @@ const Form = () => {
 						minLength="8"
 						placeholder="••••••••"
 						autoComplete="off"
+						onChange={(e) => setPassword(e.target.value)}
 						required
 					/>
 				</div>

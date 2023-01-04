@@ -17,11 +17,19 @@ public class UserJpaRepository {
     @PersistenceContext
     EntityManager entityManager;
 
-    public User findById(int id) {
-        return entityManager.find(User.class, id);// JPA
+    public String findUser(String email, String password) {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<User> query = builder.createQuery(User.class);
+        Root<User> root = query.from(User.class);
+        query.select(root).where(builder.and(builder.equal(root.get("email"),
+                        email),
+                builder.equal(root.get("password"), password)));
+        List<User> user = entityManager.createQuery(query).getResultList();
+        String username = user.isEmpty() ? "" : user.get(0).getUsername();
+        return getMessage(username);
     }
 
-    public String insert(User user) {
+    public String addUser(User user) {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<User> query = builder.createQuery(User.class);
         Root<User> root = query.from(User.class);
