@@ -42,9 +42,13 @@ const Form = () => {
 					</Link>
 				</div>
 				<div className="my-4 text-center">
-					<button type="submit" className="btn btn-lg btn-outline-dark" id="usersubmit" rows="3">
-						Login!
-					</button>
+					<input
+						type="submit"
+						className="btn btn-lg btn-outline-dark"
+						id="usersubmit"
+						rows="3"
+						value={"Login!"}
+					/>
 				</div>
 			</form>
 		</div>

@@ -14,24 +14,36 @@ const Credits = () => {
 				<li className="list-group-item list-release lead mt-1">
 					<h5>Frameworks</h5>
 					<div className="fs-6 text-light">
-						-{" "}
+						-{" Frontend services by "}
 						<a href="https://reactjs.org/" className="link link-color-white">
 							ReactJS
 						</a>
 					</div>
 					<div className="fs-6 text-light">
-						-{" "}
+						-{" Backend REST services by "}
 						<a href="https://spring.io/projects/spring-boot" className="link link-color-white">
 							SpringBoot
 						</a>
 					</div>
 				</li>
 				<li className="list-group-item list-release lead mt-1">
-					<h5>Libraries</h5>
+					<h5>Libraries & APIs</h5>
 					<div className="fs-6 text-light">
-						-{" "}
+						-{" CSS Styling by "}
 						<a href="https://getbootstrap.com/" className="link link-color-white">
 							Bootstrap
+						</a>
+					</div>
+					<div className="fs-6 text-light">
+						-{" Textarea editor by "}
+						<a href="https://quilljs.com/" className="link link-color-white">
+							Quill
+						</a>
+					</div>
+					<div className="fs-6 text-light">
+						-{" Alert theme by "}
+						<a href="https://sweetalert2.github.io/" className="link link-color-white">
+							SweetAlert2
 						</a>
 					</div>
 				</li>
