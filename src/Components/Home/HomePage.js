@@ -1,17 +1,25 @@
 import React from "react";
-import Header from "../Header";
+import HomeHeader from "./HomeHeader";
 import AddNote from "./AddNote";
 import "./HomePage.css";
 import FloatingNote from "./FloatingNote";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+	var username = localStorage.getItem("username");
+	const navigate = useNavigate();
+	const logOutHandler = () => {
+		localStorage.clear();
+		navigate("/");
+	};
+
 	return (
 		<div>
 			<div id="home-background-image"></div>
-			<Header />
+			<HomeHeader />
 			<div className="d-flex justify-content-between">
-				<h3 className="fw-semibold mx-4 mt-4">Welcome @Name!</h3>
-				<button className="btn btn-outline-light mx-4 mt-4">
+				<h3 className="fw-semibold mx-4 mt-4">Welcome {username}!</h3>
+				<button className="btn btn-outline-light mx-4 mt-4" onClick={logOutHandler}>
 					Logout <i className="bi bi-box-arrow-right"></i>
 				</button>
 			</div>

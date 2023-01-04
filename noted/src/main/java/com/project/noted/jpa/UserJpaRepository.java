@@ -61,14 +61,7 @@ public class UserJpaRepository {
     public List<User> findAll() {
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<User> query = builder.createQuery(User.class);
-        Root<User> root = query.from(User.class);
+        query.from(User.class);
         return entityManager.createQuery(query).getResultList();
     }
-//    public User update(User User) {
-//        return entityManager.merge(User);
-//    }
-//public void deleteById(int id) {
-//    User User = findById(id);
-//    entityManager.remove(User);
-//}
 }

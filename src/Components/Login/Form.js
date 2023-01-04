@@ -3,7 +3,7 @@ import "../Form.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Form = () => {
+const Form = ({ authentication }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
@@ -20,12 +20,14 @@ const Form = () => {
 		const message = jsonObj["message"];
 		const isLoggedIn = message !== "";
 		if (isLoggedIn) {
+			authentication(true);
 			Swal.fire({
 				title: "Login Success!",
 				text: "Hello " + message,
 				icon: "success",
 				confirmButtonText: "Write Notes!",
 			}).then((result) => {
+				localStorage.setItem("username", JSON.stringify(message));
 				if (result.isConfirmed) {
 					navigate("/home");
 				}

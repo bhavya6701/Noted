@@ -23,17 +23,4 @@ public class UserService {
     public List<User> getAllUsers() {
         return repository.findAll();
     }
-
-//    public void updateUser(User user, String id) {
-//        users = repository.findAll();
-//        for(int i=0; i< users.size(); i++) {
-//            if(id.equals(users.get(i).getId())) {
-//                users.set(i, user);
-//                return;
-//            }
-//        }
-//    }
-//    public void deleteUser(int id) {
-//        repository.deleteById(id);
-//    }
 }

@@ -35,7 +35,7 @@ public class User {
     @Override
     public String toString() {
         String result = String.format("\nPerson Id = %s \nName = %s \nEmail = %s \nPassword = %s" +
-                        "\nBirthDate = %s]", id, username, email, password, birthDate);
+                "\nBirthDate = %s]", id, username, email, password, birthDate);
         return result;
     }
 }
