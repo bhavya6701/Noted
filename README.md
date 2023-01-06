@@ -29,3 +29,5 @@ Before you begin, make sure you have the following software installed on your ma
 - In a separate terminal, navigate to the root directory of the project and start the client by running the following command.
 
 The application will be running at ```http://localhost:3000``` while the SpringBoot server will be running at ```http://localhost:8080```.
+
+Thanks for checking out my project :)
