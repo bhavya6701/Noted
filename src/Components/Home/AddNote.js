@@ -1,10 +1,10 @@
 import React from "react";
 import Note from "./Note";
 
-const AddNote = () => {
+const AddNote = ({ addNoteHandler, newNote, setnewNote }) => {
 	return (
-		<div className="">
-			<Note />
+		<div>
+			<Note addNoteHandler={addNoteHandler} newNote={newNote} setnewNote={setnewNote} />
 		</div>
 	);
 };

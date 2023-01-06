@@ -1,6 +1,5 @@
 package com.project.noted.entity;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -16,23 +15,18 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Feedback {
-
+public class Note {
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue
-    private Long id;
-
-    private int rating;
-
-    private String feedback;
-
+    private int id;
+    private String username;
+    private String note;
     private Date date;
 
-    public Feedback(int rating, String feedback, Date date) {
+    public Note(String username, String note, Date date) {
         super();
-        this.rating = rating;
-        this.feedback = feedback;
+        this.username = username;
+        this.note = note;
         this.date = date;
     }
 }

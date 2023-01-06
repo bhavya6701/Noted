@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const Note = () => {
-	const [value, setValue] = useState("abc");
+const Note = ({ addNoteHandler, newNote, setnewNote }) => {
 	return (
 		<div>
-			<ReactQuill theme="snow" value={value} onChange={setValue} className="text-area-background" />
-			<div className="row">
-				<div className="col-2 offset-10 p-0">
-					<button className="btn btn-outline-warning mt-3 me-3">Add A Note!</button>
+			<form id="noteForm" method="post" onSubmit={addNoteHandler}>
+				<ReactQuill
+					theme="snow"
+					value={newNote}
+					onChange={setnewNote}
+					className="text-area-background"
+				/>
+				<div className="row mt-3">
+					<div className="col-2 offset-10 p-0">
+						<input className="btn btn-outline-warning" type="submit" value={"Add Note!"} />
+					</div>
 				</div>
-			</div>
+			</form>
 		</div>
 	);
 };

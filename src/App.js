@@ -19,7 +19,6 @@ function App() {
 		setIsAuth(doAllow);
 		localStorage.setItem("isAuth", JSON.stringify(doAllow));
 	};
-	console.log(isAuth);
 	return (
 		<div>
 			<BrowserRouter>

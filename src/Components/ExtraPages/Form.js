@@ -8,7 +8,6 @@ const Form = () => {
 	const [feedback, setFeedback] = useState("");
 
 	const feedbackRequest = async (fb) => {
-		console.log(fb);
 		await fetch(`http://localhost:8080/feedback`, {
 			method: "POST",
 			headers: { "Content-type": "application/json" },
