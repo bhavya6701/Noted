@@ -26,7 +26,7 @@ Before you begin, make sure you have the following software installed on your ma
 - Navigate to the /Noted/src directory of the project and install the Node.js dependencies: ```npm install```
 - Navigate to the /Noted/noted/src/main directory and install the Java dependencies using Maven: ```mvn install```
 - Start the SpringBoot server by running the java application in an IDE.
-- In a separate terminal, navigate to the /Noted/src directory of the project and start the client by running the following command: ```npm start```
+- Start the client by navigating to the /Noted/src directory of the project running the following command in terminal: ```npm start```
 
 The application will be running at ```http://localhost:3000``` while the SpringBoot server will be running at ```http://localhost:8080```.
 
